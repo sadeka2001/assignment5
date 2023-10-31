@@ -1,13 +1,6 @@
-<?php
-if(isset($_POST['submit'])){
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $fp = fopen("./user.txt", "a");
-    fwrite($fp, "user, $email, $password, $name\n");
-    fclose($fp);
-    header("Location: login.php");
-}
+
+<?php 
+session_start();
 
 
 ?>
@@ -22,19 +15,19 @@ if(isset($_POST['submit'])){
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
 </head>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["username"];
+    $email = $_POST["email"];
+    $password = password_hash($_POST["password"], PASSWORD_BCRYPT);
+    $role = "user"; 
 
-// if ($_SERVER["REQUEST_METHOD"] == "POST") {
-//     $username = $_POST["username"];
-//     $email = $_POST["email"];
-//     $password = password_hash($_POST["password"], PASSWORD_BCRYPT);
-//     $role = "user"; 
-
-//     $user = "$username,$email,$password,$role" . PHP_EOL;
-//     file_put_contents("user.txt", $user, FILE_APPEND);
+    $user = "$username,$email,$password,$role" . PHP_EOL;
+    file_put_contents("user.txt", $user, FILE_APPEND);
     
   
-//     header("Location: login.php");
-// }
+    header("Location: login.php");
+}
 ?>
 
 <body>
@@ -45,7 +38,7 @@ if(isset($_POST['submit'])){
             <form action="register.php" method="post">
                 <input type="text" id="username" class="fadeIn second" name="username"  placeholder="Enter your Name" required>
                 <input type="text" id="email" class="fadeIn third" name="email" placeholder="Enter your email" required>
-                <input type="password" id="password" class="fadeIn third" name="password" placeholder="Enter your password" required>
+                <input type="password" id="password" class="fadeIn third" name="password" placeholder="Enter your password" >
                 <input type="submit" class="fadeIn fourth" value="submit">
             </form>
         </div>

@@ -3,3 +3,4 @@ manager,manager@mail.com,123456789,manager
 user,user@mail.com,123456789,user
 
 admin,admin@mail.com,$2y$10$Az1Txs/AwID8/MiEQgrYR.zmUPHF5HYuIveq4cswXOzPJcsqXg3xO,user
+test,test@mail.com,$2y$10$QA/s3/Jw7wT0Qi9AN1WwveQparfUHm0sL.nA.ucnZPRP6WHMolwVe,user
