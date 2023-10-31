@@ -1,0 +1,5 @@
+admin,admin@mail.com,123456789,admin
+manager,manager@mail.com,123456789,manager
+user,user@mail.com,123456789,user
+
+admin,admin@mail.com,$2y$10$Az1Txs/AwID8/MiEQgrYR.zmUPHF5HYuIveq4cswXOzPJcsqXg3xO,user
