@@ -9,10 +9,10 @@ if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $role = $_POST['role'];
-    $fp = fopen("./database/user_list.txt", "a");
+    $fp = fopen("./user.txt", "a");
     fwrite($fp, "$role, $email, $password, $name\n");
     fclose($fp);
-    header("Location: admin-dashboard.php");
+    header("Location: admin_dashboard.php");
 }
 ?>
 <!DOCTYPE html>

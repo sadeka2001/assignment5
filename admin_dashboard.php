@@ -41,7 +41,7 @@ if (isset($_GET['id']) && isset($_GET['id']) != NULL) {
 <body>
     <div class="container">
 
-        <h2>Welcome, Manager</h2>
+        <h2>Welcome, Admin</h2>
         <p>Role Management Options:</p>
         <div class="admin">
             <h4>Admin</h4>
@@ -57,7 +57,7 @@ if (isset($_GET['id']) && isset($_GET['id']) != NULL) {
         <div class="manager"></div>
         <h4>Manager</h4>
         <p><?php
-            $data = file('.user.txt');
+            $data = file('./user.txt');
             echo count(array_filter($data, function ($line) {
                 return strpos($line, 'manager') !== false;
             }))
@@ -66,7 +66,7 @@ if (isset($_GET['id']) && isset($_GET['id']) != NULL) {
     <div class="user">
         <h4>User</h4>
         <p><?php
-            $data = file('.user.txt');
+            $data = file('./user.txt');
             echo count(array_filter($data, function ($line) {
                 return strpos($line, 'user') !== false;
             }))

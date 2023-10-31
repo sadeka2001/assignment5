@@ -4,7 +4,7 @@ if($_SESSION['role'] == 'user' ){
     header("Location: login.php");
 }
 $id = $_GET['id'];
-$fp = fopen(".user.txt", "r");
+$fp = fopen("./user.txt", "r");
 $roles = array();
 $emails = array();
 $passwords = array();
@@ -25,7 +25,7 @@ if(isset($_POST['submit'])){
     $password = $_POST['password'];
     $role = $_POST['role'];
     $data[$id] = "$role, $email, $password, $name";
-    file_put_contents('.user.txt', $data);
+    file_put_contents('./user.txt', $data);
     header("Location: admin_dashboard.php");
 }
 ?>

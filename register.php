@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $role = "user"; 
 
     $user = "$username,$email,$password,$role" . PHP_EOL;
-    file_put_contents("user.txt", $user, FILE_APPEND);
+    file_put_contents("./user.txt", $user, FILE_APPEND);
     
   
     header("Location: login.php");

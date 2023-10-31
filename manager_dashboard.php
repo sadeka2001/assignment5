@@ -48,7 +48,7 @@ if (isset($_GET['id']) && isset($_GET['id']) != NULL) {
     <div class="admin">
         <h4>Admin</h4>
         <p><?php
-            $data = file('.user.txt');
+            $data = file('./user.txt');
             echo count(array_filter($data, function ($line) {
                 return strpos($line, 'admin') !== false;
             }))
@@ -59,7 +59,7 @@ if (isset($_GET['id']) && isset($_GET['id']) != NULL) {
     <div class="manager"></div>
     <h4>Manager</h4>
     <p><?php
-        $data = file('.user.txt');
+        $data = file('./user.txt');
         echo count(array_filter($data, function ($line) {
             return strpos($line, 'manager') !== false;
         }))
@@ -68,7 +68,7 @@ if (isset($_GET['id']) && isset($_GET['id']) != NULL) {
     <div class="user"></div>
     <h4>User</h4>
     <p><?php
-        $data = file('.user.txt');
+        $data = file('./user.txt');
         echo count(array_filter($data, function ($line) {
             return strpos($line, 'user') !== false;
         }))
@@ -93,8 +93,8 @@ if (isset($_GET['id']) && isset($_GET['id']) != NULL) {
                 <td><?php echo $names[$i]; ?></td>
                 <td><?php echo $emails[$i]; ?></td>
                 <td><?php echo ucwords($roles[$i]); ?></td>
-                <td><a href="edit_role.php?id=<?php echo $i; ?>"></a>
-                    <a href="?id=<?php echo $i; ?>"></a>
+                <td><a href="edit_role.php?id=<?php echo $i; ?>">Edit</a>
+                    <a href="?id=<?php echo $i; ?>">Delet</a>
                 </td>
             </tr>
         <?php } ?>
